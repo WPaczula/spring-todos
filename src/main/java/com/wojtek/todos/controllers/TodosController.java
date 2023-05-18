@@ -1,28 +1,30 @@
 package com.wojtek.todos.controllers;
 
-import java.util.List;
-
+import com.wojtek.todos.dtos.TodosDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wojtek.todos.entities.Todo;
-import com.wojtek.todos.repositories.TodosRepository;
+import com.wojtek.todos.mappers.TodosMapper;
+import com.wojtek.todos.services.TodosServiceImpl;
 
 @RestController()
 @RequestMapping("/todos")
 public class TodosController {
-    TodosRepository todosRepository;
+    TodosServiceImpl todosService;
+    TodosMapper todosMapper;
 
-    public TodosController(TodosRepository todosRepository) {
-        this.todosRepository = todosRepository;
+    public TodosController(TodosServiceImpl todosService, TodosMapper todosMapper) {
+        this.todosService = todosService;
+        this.todosMapper = todosMapper;
     }
 
     @GetMapping()
-    public ResponseEntity<List<Todo>> getTodos() {
-        var todos = (List<Todo>) todosRepository.findAll();
+    public ResponseEntity<TodosDTO> getTodos() {
+        var todos = todosService.getAllTodos();
+        var todosDTO = todosMapper.mapToDto(todos);
 
-        return ResponseEntity.ok(todos);
+        return ResponseEntity.ok(todosDTO);
     }
 }
