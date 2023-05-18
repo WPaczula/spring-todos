@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TodosService {
     public List<Todo> getAllTodos();
+
+    public Todo addTodo(Todo todo);
 }

@@ -18,4 +18,11 @@ public class TodosServiceImpl implements TodosService {
     public List<Todo> getAllTodos() {
         return (List<Todo>) todosRepository.findAll();
     }
+
+    @Override
+    public Todo addTodo(Todo todo) {
+        var createdTodo = todosRepository.save(todo);
+
+        return createdTodo;
+    }
 }
