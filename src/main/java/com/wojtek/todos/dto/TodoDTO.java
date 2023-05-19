@@ -1,4 +1,4 @@
-package com.wojtek.todos.dtos;
+package com.wojtek.todos.dto;
 
 public class TodoDTO {
     private String id;

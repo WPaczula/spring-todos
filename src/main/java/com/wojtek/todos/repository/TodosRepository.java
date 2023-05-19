@@ -1,8 +1,8 @@
-package com.wojtek.todos.repositories;
+package com.wojtek.todos.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.wojtek.todos.entities.Todo;
+import com.wojtek.todos.entity.Todo;
 
 public interface TodosRepository extends CrudRepository<Todo, String> {
 

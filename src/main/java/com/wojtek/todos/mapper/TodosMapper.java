@@ -1,9 +1,10 @@
-package com.wojtek.todos.mappers;
+package com.wojtek.todos.mapper;
 
-import com.wojtek.todos.dtos.NewTodoDTO;
-import com.wojtek.todos.dtos.TodoDTO;
-import com.wojtek.todos.dtos.TodosDTO;
-import com.wojtek.todos.entities.Todo;
+import com.wojtek.todos.dto.NewTodoDTO;
+import com.wojtek.todos.dto.TodoDTO;
+import com.wojtek.todos.dto.TodosDTO;
+import com.wojtek.todos.entity.Todo;
+
 import org.mapstruct.Mapper;
 
 import java.util.List;

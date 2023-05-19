@@ -1,4 +1,4 @@
-package com.wojtek.todos.entities;
+package com.wojtek.todos.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 

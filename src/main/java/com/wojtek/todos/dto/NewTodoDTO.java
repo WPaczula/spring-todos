@@ -1,4 +1,4 @@
-package com.wojtek.todos.dtos;
+package com.wojtek.todos.dto;
 
 import org.hibernate.validator.constraints.Length;
 

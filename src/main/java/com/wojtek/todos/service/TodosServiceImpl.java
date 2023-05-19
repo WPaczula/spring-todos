@@ -1,11 +1,11 @@
-package com.wojtek.todos.services;
+package com.wojtek.todos.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.wojtek.todos.entities.Todo;
-import com.wojtek.todos.repositories.TodosRepository;
+import com.wojtek.todos.entity.Todo;
+import com.wojtek.todos.repository.TodosRepository;
 
 @Service
 public class TodosServiceImpl implements TodosService {

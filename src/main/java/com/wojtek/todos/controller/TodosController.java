@@ -1,8 +1,5 @@
-package com.wojtek.todos.controllers;
+package com.wojtek.todos.controller;
 
-import com.wojtek.todos.dtos.NewTodoDTO;
-import com.wojtek.todos.dtos.TodoDTO;
-import com.wojtek.todos.dtos.TodosDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wojtek.todos.mappers.TodosMapper;
-import com.wojtek.todos.services.TodosServiceImpl;
+import com.wojtek.todos.dto.NewTodoDTO;
+import com.wojtek.todos.dto.TodoDTO;
+import com.wojtek.todos.dto.TodosDTO;
+import com.wojtek.todos.mapper.TodosMapper;
+import com.wojtek.todos.service.TodosServiceImpl;
 
 import jakarta.validation.Valid;
 
