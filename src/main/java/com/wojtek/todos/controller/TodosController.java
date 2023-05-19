@@ -1,5 +1,6 @@
 package com.wojtek.todos.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +43,6 @@ public class TodosController {
         var createdTodo = todosService.addTodo(newTodo);
         var todoDTO = todosMapper.map(createdTodo);
 
-        return ResponseEntity.ok(todoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(todoDTO);
     }
 }
