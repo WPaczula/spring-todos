@@ -13,13 +13,13 @@ import java.util.stream.StreamSupport;
 @Mapper(componentModel = "spring")
 public interface TodosMapper {
 
-    TodoDTO map(Todo source);
+    TodoDTO mapToDTO(Todo source);
 
-    Todo map(NewTodoDTO source);
+    Todo mapToEntity(NewTodoDTO source);
 
-    default TodosDTO mapToDto(List<Todo> entities) {
+    default TodosDTO mapToDTO(List<Todo> entities) {
         var todos = StreamSupport.stream(entities.spliterator(), false)
-                .map(this::map)
+                .map(this::mapToDTO)
                 .toList();
         return new TodosDTO(todos);
     }

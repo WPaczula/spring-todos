@@ -1,11 +1,11 @@
 package com.wojtek.todos.service;
 
-import java.util.List;
-
-import com.wojtek.todos.entity.Todo;
+import com.wojtek.todos.dto.NewTodoDTO;
+import com.wojtek.todos.dto.TodoDTO;
+import com.wojtek.todos.dto.TodosDTO;
 
 public interface TodosService {
-    public List<Todo> getAllTodos();
+    public TodosDTO getAllTodos();
 
-    public Todo addTodo(Todo todo);
+    public TodoDTO addTodo(NewTodoDTO todo);
 }

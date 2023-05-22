@@ -32,17 +32,14 @@ public class TodosController {
     @GetMapping
     public ResponseEntity<TodosDTO> getTodos() {
         var todos = todosService.getAllTodos();
-        var todosDTO = todosMapper.mapToDto(todos);
 
-        return ResponseEntity.ok(todosDTO);
+        return ResponseEntity.ok(todos);
     }
 
     @PostMapping
     public ResponseEntity<TodoDTO> addTodo(@RequestBody @Valid NewTodoDTO newTodoDTO) {
-        var newTodo = todosMapper.map(newTodoDTO);
-        var createdTodo = todosService.addTodo(newTodo);
-        var todoDTO = todosMapper.map(createdTodo);
+        var createdTodo = todosService.addTodo(newTodoDTO);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(todoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdTodo);
     }
 }
